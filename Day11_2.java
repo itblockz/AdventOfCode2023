@@ -77,13 +77,14 @@ public class Day11_2 {
         int rows = map.size();
         int cols = map.get(0).size();
         char replace = '*';
+        String regex = "\\.|\\*";
         for (int i = rows-1; i >= 0; i--) {
-            if (rowContains(map, i, "\\.|\\*")) {
+            if (rowContains(map, i, regex)) {
                 replaceRow(map, i, replace);
             }
         }
         for (int i = cols-1; i >= 0; i--) {
-            if (colContains(map, i, "\\.|\\*")) {
+            if (colContains(map, i, regex)) {
                 replaceCol(map, i, replace);
             }
         }
